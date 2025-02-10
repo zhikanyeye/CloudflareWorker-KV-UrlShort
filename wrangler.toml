@@ -1,1 +1,19 @@
+name = "url-shortener"
+type = "javascript"
+account_id = "你的CLOUDFLARE账号ID"
+workers_dev = true
+route = ""
+zone_id = ""
 
+kv_namespaces = [
+  { binding = "URL_SHORT_KV", id = "你的KV命名空间ID" }
+]
+
+[vars]
+TURNSTILE_SITE_KEY = "你的TURNSTILE站点密钥"
+TURNSTILE_SECRET = "你的TURNSTILE密钥"
+
+[build]
+command = "npm run build"
+[build.upload]
+format = "service-worker"
